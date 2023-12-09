@@ -1,0 +1,263 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.52, 3, 10.019, },
+		bbMin = { -0.47, -3.3, -1.72, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 0.496, 1.177, 4.870, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.023, -1.177, 3.148, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/einheitsbauform/hv69_korb.mtl", },
+						mesh = "railroad/einheitsbauform/Korb_69_lod0.msh",
+						name = "Mast",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.01, 5.5, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/schirm_hs_brck_lod0.msh",
+						name = "Mast",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.8, 0, 8.15, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/mast_strecke.mtl", },
+						mesh = "railroad/HV_51/Mastschild_lod0.msh",
+						name = "Mastschild",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.62, 0.42, 8.2, 1, },
+					},					
+					--- Hauptsignal ---
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/Einzeloptik_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.884, 0.15, 8.615, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/Einzeloptik_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.884, -0.15, 8.345, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/Einzeloptik_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.884, 0.15, 8.345, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/Einzeloptik_lod0.msh",
+						name = "Einzeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.884, 0.15, 7.665, 1, },
+					},
+					--- Sh1 ---
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/sh1_lod0.msh",
+						name = "Einzeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.794, 0, 7.97, 1, },
+					},
+					--- Zs1 ---
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/Zs1_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1.13, 0, 7.12, 1, },
+					},
+					--- Zsa oben ---
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast.mtl", },
+						mesh = "railroad/einheitsbauform/zsa_blech_lod0.msh",
+						name = "Zsa Halter oben",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.8, 0, 8.15, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast_neu.mtl", },
+						mesh = "railroad/sk_signale/zsa_oben_angewinkelt_lod0.msh",
+						name = "Zsa oben",
+						transf = { 100, 0, 0, 0, 0, -1.6292067812174e-05, -100, 0, 0, 100, -1.6292067812174e-05, 0, -0.31000000238419, 0, 6.5199999809265, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/mast_strecke.mtl", },
+						mesh = "railroad/HV_51/zsa_schirm_oben_lod0.msh",
+						name = "Zsa Schirm",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, -0.85, 0, 9.29, 1, },
+					},
+					--- Zsa rechts ---
+					{
+						materials = { "railroad/HV_51/mast_strecke.mtl", },
+						mesh = "railroad/HV_51/zsa_lod0.msh",
+						name = "Zs 1",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.865, 0, 6.4, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/mast_strecke.mtl", },
+						mesh = "railroad/HV_51/ZSA_Schirm_quadrat_lod0.msh",
+						name = "Zs 1",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.82, 0, 6.4, 1, },
+					},			
+					--- PZB ---
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/misc/ks_pzb_1000.msh",
+						name = "PZB",
+						transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.55, 0.22, 1, },
+					},
+					
+					--- Hauptsignal ---
+					--- Zsa oben---
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_green_long_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_green_short_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/zusatzanzeiger/hv_zs3_8.mtl", },
+						mesh = "railroad/HV_51/zsa_display_lod0.msh",
+						name = "Licht grün",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.83, 0, 9.27, 1, },
+					},
+					--- Rot ---
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/HV_51/licht.mtl", },
+						mesh = "railroad/HV_51/Licht_Hs_rot_lod0.msh",
+						name = "Licht Hs rot",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.8, 0.15, 8.32, 1, },
+					},
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/HV_51/licht.mtl", },
+						mesh = "railroad/HV_51/Licht_Hs_rot_lod0.msh",
+						name = "Licht Hs rot",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.8, -0.15, 8.32, 1, },
+					},
+					--- Grün oben ---
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_green_long_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_green_short_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/HV_51/licht.mtl", },
+						mesh = "railroad/HV_51/Licht_Hs_gruen_lod0.msh",
+						name = "Licht Hs grün",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.8, 0.15, 8.585, 1, },
+					},
+					--- Zsa unten ---
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_green_long_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_green_short_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/zusatzanzeiger/hv_zp9.mtl", },
+						mesh = "railroad/HV_51/zsa_display_lod0.msh",
+						name = "Licht grün",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.765, 0, 6.4, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.66, -2.5, -0.2, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 300,
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1969,
+			yearTo = 1984,
+		},
+		category = {
+			categories = { "Hv_69_asig_sbr", },
+		},
+		cost = {
+			price = 5500,
+		},
+		description = {
+			name = _("Hv69 asig sbr Hp00/Hp1 zs3: 80 zp9"),
+			description = _("Hv69 Hauptsignal an einer Signalbrücke. Vsig nicht anbaubar."),
+		},
+		signal = {
+			type = "PATH_SIGNAL",
+		},
+		hv69Signale = {
+			side = "sbr",
+			zs3Zs3v = true,
+			zs2Zs2v = false,
+			vkb = false,
+			wied = false,
+			Kl = false,
+			Sh1 = false,
+			Zs1 = false,
+			Zs6 = false,
+			Zp9 = true,
+			waypoint = false,
+		},
+	},
+	version = 1,
+}
+end

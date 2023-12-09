@@ -1,0 +1,42 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.63, 0.25, 0.9, },
+		bbMin = { 0.16, -0.25, 0.18, },
+	},
+	collider = {
+		params = { },
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+		type = "MESH",
+	},
+	lods = {
+		{
+			node = {
+				animations = { },
+				children = {
+					{						
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/kaesten/ks_box_gross.msh",						
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+					},			
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 300,
+		},	
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1993,
+			yearTo = 0,
+		},
+		cost = {
+			price = -1,
+		},		
+	},
+	version = 1,
+}
+end

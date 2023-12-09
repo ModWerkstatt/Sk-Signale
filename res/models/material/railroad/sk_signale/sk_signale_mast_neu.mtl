@@ -1,0 +1,52 @@
+function data()
+return {
+	__version = "",
+	order = 1,
+	params = {
+		albedo_scale = {
+			albedoScale = { 1, 1, 1, },
+		},
+		alpha_scale = {
+			alphaScale = 1,
+		},
+		alpha_test = {
+			a2CThreshold = 0,
+			alphaThreshold = 0.5,
+			cutout = true,
+			disableDepthAndNormalWrite = false,
+			sorted = false,
+		},
+		fade_out_range = {
+			fadeOutEndDist = 20000,
+			fadeOutStartDist = 10000,
+		},
+		map_albedo_opacity = {
+			fileName = "models/railroad/sk_signale/sk_signale_neu_albedo.tga",
+			type = "TWOD",
+		},
+		map_metal_gloss_ao = {
+			fileName = "models/railroad/sk_signale/sk_signale_neu_mga.dds",
+			type = "TWOD",
+		},
+		map_normal = {
+			compressionAllowed = false,
+			fileName = "default_normal_map.dds",
+			redGreen = true,
+			type = "TWOD",
+		},
+		normal_scale = {
+			normalScale = 0.0099999997764826,
+		},
+		polygon_offset = {
+			factor = 0,
+			forceDepthWrite = false,
+			units = 0,
+		},
+		two_sided = {
+			flipNormal = false,
+			twoSided = false,
+		},
+	},
+	type = "PHYS_TRANSPARENT_NRML_MAP",
+}
+end

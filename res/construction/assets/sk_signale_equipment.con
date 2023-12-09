@@ -1,0 +1,516 @@
+﻿function data()
+return {
+	type = "ASSET_TRACK",
+	description = {
+		name = _("Sk-Signale Zubehör"),
+		description = _("formsignal_extras_desc")		
+	},
+	availability = {
+		yearFrom = 1977,
+		yearTo = 0,
+	},
+	buildMode = "MULTI",
+	categories = { "MW Signal Assets" },
+	order = 1,
+	skipCollision = true,
+	autoRemovable = false,
+
+	params = {
+		{
+			key = "signType",
+			name = _("Zusatzsignal"),
+			uiType = "ICON_BUTTON",
+			values = { "ui/construction/parameters/sk_signale/sk_zsa_ui.tga", "ui/construction/parameters/sk_signale/sk_hp2_ui.tga", "ui/construction/parameters/sk_signale/lf7_11_ui.tga", "ui/construction/parameters/ks_signale/schaltkasten_gross_ui.tga", "ui/construction/parameters/ks_signale/pzb_ui.tga", },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_addition_signal"),
+		},
+		{
+			key = "signalPoleType",
+			name = _("Masthöhe"),
+			values = { _("niedrig"), _("hoch") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_signal_pole_height"),
+		},	
+		{
+			key = "signalType",
+			name = _("Signaltyp"),
+			values = { _("H/V 69"), _("H/V 59"), _("Kompakt"), _("Einzeln") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_signalwidh"),
+		},
+		{
+			key = "signalAsig",
+			name = _("Asig? (nur bei H/V 69)"),
+			values = { _("nein"), _("ja"), },
+			defaultIndex = 0,
+		},
+		{
+			key = "zsaType",
+			name = _("ZSA Typ"),
+			values = { _("Zs3"), _("Zs3v"), _("Zs6") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_position"),
+		},
+		{
+			key = "signalPosition",
+			name = _("Standort"),
+			values = { _("Rechts"), _("Links") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_position"),
+		},
+		{
+			key = "LfSpeed",
+			name = _("Lf 7 Geschwindigkeit"),
+			uiType = "COMBOBOX",
+			values = { "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160", },
+			defaultIndex = 0,
+			tooltip = _("tooltip_speed"),
+		},	
+		{
+			key = "LfAlt",
+			name = _("'Lf 7' | 'ZSA Einzeln' gealtert?"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 1,
+		--	tooltip = _("tooltip_tapedOff"),
+		},
+		{
+			key = "LfZsa",
+			name = _("Zsa unten am Signal? (für Lf 7)"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_tapedOff"),
+		},
+		{
+			key = "signalKreuz",
+			name = _("Ausgekreuzte ZSA"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_tapedOff"),
+		},
+		{
+			key = "signaldistance",
+			name = _("Verschub für Signal Distance Mod"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 0,
+		--	tooltip = _("tooltip_signalddistancemod"),
+		},
+	},
+
+	updateFn = function(params)
+		local result = { }		
+		result.models = { }	
+		result.groundFaces = { }
+		
+		local xPosition = 0
+		local zPosition = 0
+		local yPosition = 0
+		
+		local blendeType = ""
+		local signalSystem = ""
+		local halterType = ""
+		local kreuzType = ""
+		local speedNumber = ""
+		local halterAge = ""
+		local zPosMast = 0
+		local xPosLf = 0
+		local zPosHp = 0
+		local xPosHalter = 0
+		local yPosKasten = 0
+		local xPosKasten = 0
+		local zPosKasten = 0
+		local signalDistance = 0
+		
+		
+		
+		if params.LfSpeed == 0 then
+			speedNumber = "3"
+		else
+			speedNumber = tostring(params.LfSpeed + 3)
+		end
+		
+		
+		
+		if params.signaldistance == 0 then
+			signalDistance = -0.0			
+		elseif params.signaldistance == 1 then
+			signalDistance = 8
+		end
+		
+		
+		
+		if params.signalPosition == 0 then
+			yPosition = -2.15
+		elseif params.signalPosition == 1 then
+			yPosition =  2.15
+		end	
+		
+		
+		
+		if params.signalPoleType == 0 then
+			if params.signalType == 0 then
+				zPosMast = 0
+			elseif params.signalType == 1 then
+				if params.zsaType == 0 then
+				zPosMast = -1.275
+				else
+				zPosMast = -1.194
+				end
+			elseif params.signalType == 2 then
+				zPosMast = 0
+			end
+		elseif params.signalPoleType == 1 then
+			if params.zsaType == 0 then
+				if params.signalType == 0 then
+					zPosMast = 0.650
+				elseif params.signalType == 1 then
+					zPosMast = 0
+				elseif params.signalType == 2 then
+					zPosMast = 0
+				end
+			elseif params.zsaType == 1 then
+				if params.signalType == 0 then
+					zPosMast = 0.650
+				else
+					zPosMast = 0
+				end
+			elseif params.zsaType == 2 then
+				if params.signalType == 0 then	
+					zPosMast = 0.549
+				else
+					zPosMast = 0
+				end
+			end
+		end
+		
+		
+		
+		if params.zsaType == 0 then
+			blendeType = "_dreieck_o"
+			halterType = "_halter_o"
+			xPosition = 0
+			xPosHalter = 0
+			if params.signalType == 0 then
+				if params.signalAsig == 0 then
+					zPosition = 3.211
+				else
+					if params.signalPoleType == 0 then
+						zPosition = 3.361
+					else
+						zPosition = 3.211
+					end
+				end
+			elseif params.signalType == 1 then
+				zPosition = 3.961
+			elseif params.signalType == 2 then
+				zPosition = 3.53
+			end
+		elseif params.zsaType == 1 then
+			if params.signalType == 0 then
+				blendeType = "_dreieck_u"
+				halterType = "_halter_u"
+				zPosition = 0.638
+				xPosition = 0.612
+				xPosHalter = 0.295
+			elseif params.signalType == 1 then
+				blendeType = "_raute"
+				halterType = "_halter_u"
+				zPosition = 1
+				xPosition = -0.4
+				if params.signalPoleType == 1 then
+					xPosHalter = 0.0
+				else
+					xPosHalter = 0.296
+				end
+			elseif params.signalType == 2 then
+				halterType = "_halter_u"
+				zPosition = 1.54
+				xPosition = -0.59
+				xPosHalter = 0
+			end
+		elseif params.zsaType == 2 then
+			blendeType = "_raute"
+			halterType = "_halter_u"
+			if params.signalType == 0 then
+				zPosition = 0.541
+				xPosition = 0.612
+				xPosHalter = 0.295
+			elseif params.signalType == 1 then
+				zPosition = 1
+				xPosition = -0.4
+				if params.signalPoleType == 1 then
+					xPosHalter = 0.0
+				else
+					xPosHalter = 0.296
+				end
+			elseif params.signalType == 2 then
+				zPosition = 1.54
+				xPosition = -0.59
+				xPosHalter = 0
+			end
+		end
+		
+		
+		
+		if params.signalType == 0 then
+			signalSystem = "_69"
+		elseif params.signalType == 1 then
+			yPosition = -2.5
+			signalSystem = "_59"
+		elseif params.signalType == 2 then
+			signalSystem = "_kp"
+			yPosition = -2.15
+		end	
+		
+		
+		
+		if params.signalKreuz == 0 then
+			kreuzType = ""
+		elseif params.signalKreuz == 1 then
+			kreuzType = "_kreuz"
+		end	
+
+
+
+
+		if params.signType == 0 then
+			if params.signalType == 0 then
+				result.models[#result.models+1] = {
+					id = "railroad/sk_signale/assets/sk_zsa"..signalSystem..""..blendeType..".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+			}
+			elseif params.signalType == 1 then
+				result.models[#result.models+1] = {
+					id = "railroad/sk_signale/assets/sk_zsa"..signalSystem..""..blendeType..".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+				}
+			end
+			if params.signalPoleType == 1 then
+				result.models[#result.models+1] = {
+					id = "railroad/sk_signale/assets/sk_zsa"..signalSystem..""..halterType..".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition+xPosHalter, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+				}
+			elseif params.signalPoleType == 0 then
+				if params.signalType == 1 then
+					if params.zsaType == 0 then
+						result.models[#result.models+1] = {
+							id = "railroad/sk_signale/assets/sk_zsa"..signalSystem..""..halterType..".mdl",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition+xPosHalter, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+						}
+					else
+						result.models[#result.models+1] = {
+							id = "railroad/sk_signale/assets/sk_zsa_69"..halterType..".mdl",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition+xPosHalter, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+						}
+					end
+				elseif params.signalType == 3 then
+					zPosition = 0.54
+					xPosition = 0.215
+					
+					if params.zsaType == 0 then
+						blendeType = "_dreieck_o"
+					elseif params.zsaType == 1 then
+						blendeType = "_dreieck_u"
+					elseif params.zsaType == 2 then
+						blendeType = "_raute"
+					
+					end
+					if params.LfAlt == 0 then
+						halterAge = "_neu"
+						signalSystem = "_69"
+					else
+						halterAge = "_alt"
+						signalSystem = "_59"
+					end
+					
+					result.models[#result.models+1] = {
+						id = "railroad/sk_signale/assets/sk_zsa"..signalSystem..""..blendeType..".mdl",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.03+signalDistance+xPosition, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+					}
+				
+					result.models[#result.models+1] = {
+						id = "railroad/sk_signale/assets/sk_zsa_halter_einzeln"..halterAge..".mdl",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance, yPosition,  0.7+zPosMast, 1 },				
+					}
+				else
+					result.models[#result.models+1] = {
+						id = "railroad/sk_signale/assets/sk_zsa"..signalSystem..""..halterType..".mdl",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition+xPosHalter, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+					}
+				end
+			end
+			result.models[#result.models+1] = {
+				id = "railroad/sk_signale/assets/sk_zsa"..signalSystem.."_kasten"..kreuzType..".mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosition, yPosition,  -1.2+zPosition+zPosMast, 1 },				
+			}
+			
+			
+		elseif params.signType == 1 then
+		
+			if params.signalType == 0 then
+				if params.signalPoleType == 0 then
+					zPosHp = -0.525
+				else
+					zPosHp = 0
+				end
+			elseif params.signalType == 1 then
+				if params.signalPoleType == 0 then
+					zPosHp = -0.5085
+				else
+					zPosHp = 0.765
+				end			
+			elseif params.signalType == 2 then
+				zPosHp = -1.1
+			end
+				
+			result.models[#result.models+1] = {
+				id = "railroad/sk_signale/assets/sk"..signalSystem.."_hp2.mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0+signalDistance, 0+yPosition,  -0.04+zPosHp, 1 },				
+			}
+			
+			
+		elseif params.signType == 2 then
+			
+			if params.LfAlt == 0 then
+				pfadValue = "railroad/lfsignale"
+			else
+				pfadValue = "railroad/sk_signale/assets/lf7_gealtert"
+				
+			end
+			
+			if params.signalType == 0 then
+				if params.signalPoleType == 0 then
+					if params.LfZsa == 0 then
+						zPosHp = 1.8
+					else
+						zPosHp = 1.05
+					end
+				else
+					if params.LfZsa == 0 then
+						zPosHp = 2.2
+					else
+						zPosHp = 1.3
+					end
+				end
+			elseif params.signalType == 1 then
+				yPosition = -2.5
+				if params.signalPoleType == 0 then
+					if params.LfZsa == 0 then
+						zPosHp = 1.05
+					else
+						zPosHp = 0.2
+					end
+				else
+					if params.LfZsa == 0 then
+						zPosHp = 2.0
+					else
+						zPosHp = 1.2
+					end
+				end
+			elseif params.signalType == 2 then
+				xPosLf = -0.075
+				yPosition = -2.15
+				if params.LfZsa == 0 then
+					zPosHp = 2.4
+				else
+					zPosHp = 1.6
+				end
+			elseif params.signalType == 3 then
+				if params.signalPoleType == 0 then
+					zPosHp = -1.8
+				else
+					zPosHp = -0.25
+				
+				end
+			
+				result.models[#result.models+1] = {
+					id = ""..pfadValue.."/mast_lf_6_7.mdl",
+					transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -0.085+signalDistance+xPosLf, 0+yPosition,  1+zPosHp, 1 },				
+				}
+			
+			end
+			
+			result.models[#result.models+1] = {
+				id = ""..pfadValue.."/lf_7_kz_"..speedNumber.."0.mdl",
+				transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -0.085+signalDistance+xPosLf, 0+yPosition,  1+zPosHp, 1 },				
+			}
+			
+			
+		elseif params.signType == 3 then
+		
+			if params.signalType == 0 then
+				if params.signalAsig == 0 then
+					zPosKasten = 0.7
+					xPosKasten = 0.085
+				else
+					zPosKasten = 0.85
+					xPosKasten = 0.085
+				end
+			elseif params.signalType == 1 then
+				zPosKasten = 1
+				xPosKasten = 0.08
+				yPosition = -2.5
+			elseif params.signalType == 2 then
+				zPosKasten = 0.90
+				xPosKasten = -0.045
+				yPosition = -2.15
+				result.models[#result.models+1] = {
+					id = "railroad/sk_signale/assets/sk_schaltkasten_halter_kp.mdl",
+					transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosKasten, 0+yPosition,  -0.04+zPosKasten, 1 },				
+				}
+			elseif params.signalType == 3 then
+				if params.signalPosition == 0 then
+					xPosKasten = -0.31
+					yPosition = -2.15
+				elseif params.signalPosition == 1 then
+					yPosition = 2.15
+					xPosKasten = -0.31
+				end
+				
+				if params.signalPoleType == 0 then
+					zPosKasten = 0.8
+				else
+					zPosKasten = 1.8
+				end
+			
+				if params.LfAlt == 0 then
+					pfadValue = "railroad/lfsignale"
+				else
+					pfadValue = "railroad/sk_signale/assets/lf7_gealtert"
+				end
+				
+				result.models[#result.models+1] = {
+					id = ""..pfadValue.."/mast_lf_6_7.mdl",
+					transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -0.205+signalDistance+xPosKasten, 0+yPosition,  -1.1+zPosKasten, 1 },					
+				}
+			end
+			
+			result.models[#result.models+1] = {
+				id = "railroad/sk_signale/assets/sk_schaltkasten.mdl",
+				transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0+signalDistance+xPosKasten, 0+yPosition,  0.05+zPosKasten, 1 },				
+			}
+
+			
+		elseif params.signType == 4 then
+			result.models[#result.models+1] = {
+				id = "railroad/sk_signale/assets/sk_pzb_magnet.mdl",
+				transf = { -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0+signalDistance, -0.95,  1.08, 1 },				
+			}
+		end
+
+
+
+
+		result.groundFaces[1] = { face = { {0.01, -0.01}, { 0.01, 0.01}, {-0.01, 0.01}, {-0.01, -0.01} }, modes = { { type = "FILL", key = "industry_floor.lua" } } }
+        
+		result.terrainAlignmentLists = {
+            {
+    			type = "EQUAL",
+    			faces =  { },
+    		},
+        }
+
+		return result
+	end
+}
+
+end

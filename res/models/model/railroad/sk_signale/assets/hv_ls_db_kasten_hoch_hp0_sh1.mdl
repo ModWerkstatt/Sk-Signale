@@ -1,0 +1,141 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.52041000127792, 0, 8.0192699432373, },
+		bbMin = { -0.47244998812675, -2.3548700809479, -1.7225300073624, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 0.49642997980118, 1.1774350404739, 4.8709001541138, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.023980006575584, -1.1774350404739, 3.1483700275421, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/HV_51/sperr.mtl", },
+						mesh = "railroad/HV_51/sockel_lod0.msh",
+						name = "Mast",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/sperr.mtl", },
+						mesh = "railroad/HV_51/mast_lod0.msh",
+						name = "Mast",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1.02, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/mast_strecke.mtl", },
+						mesh = "railroad/HV_51/Mastschild_lod0.msh",
+						name = "Zs 1",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.05, 0, 1.8, 1, },
+					},
+					
+					--- Hauptsignal ---
+					{
+						materials = { "railroad/HV_51/sperr.mtl", },
+						mesh = "railroad/HV_51/lorenz_alt_kasten_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.06, 0, 3.94, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/sperr.mtl", },
+						mesh = "railroad/HV_51/schuten_lang_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.07, 0, 3.9, 1, },
+					},
+					{
+						materials = { "railroad/HV_51/sperr.mtl", },
+						mesh = "railroad/HV_51/halterung_siemens_lod0.msh",
+						name = "Doppeloptik",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.01, 0, 3.67, 1, },
+					},
+					--- PZB ---
+					{						
+						materials = { "ks_signale/misc/ks_signal_misc.mtl", },
+						mesh = "ks_signale/misc/ks_pzb_1000.msh",					
+						transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.2, 0.22, 1, },
+					},
+					
+					--- Hauptsignal ---
+					
+					{
+						animations = {
+							green = {
+								params = {
+									id = "railroad/HV_51/off.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "railroad/HV_51/on.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/HV_51/licht.mtl", },
+						mesh = "railroad/HV_51/Licht_sperr_rot_lod0.msh",
+						name = "Licht rot",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0314001164436, 0, 3.94007800636292, 1, },
+					},
+					{
+						animations = {
+							green = {
+								params = {
+									id = "railroad/HV_51/on.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "railroad/HV_51/off.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "railroad/HV_51/licht.mtl", },
+						mesh = "railroad/HV_51/Licht_sperr_weiss_lod0.msh",
+						name = "Licht grün",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.0314001164436, 0, 3.94002229309, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.15, -0.2, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1500,
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1951,
+			yearTo = 1958,
+		},
+		category = {
+			categories = { "MW Lichtsperrsignale", },
+		},
+		cost = {
+			price = 4500,
+			priceScale = 1,
+		},
+		description = {
+			name = _("H/v Ls Hoch DB Hp0/sh1"),
+            description = _("Hohes Lichtsperrsignal der Bauart DB mit PZB Magnet"),
+		},
+		signal = {
+			type = "PATH_SIGNAL",
+		},
+		komponenten = {
+			ls = true,
+			zs3Zs3v = false,
+			zs2Zs2v = false,
+		},
+	},
+	version = 1,
+}
+end

@@ -1,0 +1,53 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.51999998092651, 3, 10.019000053406, },
+		bbMin = { -0.46999999880791, -3.2999999523163, -1.7200000286102, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 0.49599999189377, 1.1770000457764, 4.8699998855591, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.023000000044703, -1.1770000457764, 3.1480000019073, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast_neu.mtl", },
+						mesh = "railroad/sk_signale/zsa_oben_angewinkelt_59_lod0.msh",
+						name = "Kasten",
+						transf = { 100, 0, 0, 0, 0, -1.6292067812174e-05, -100, 0, 0, 100, -1.6292067812174e-05, 0, -0.31000000238419, 0, 6.5199999809265-1.2, 1, },
+					},
+					{
+						materials = { "ks_signale/misc/ks_signal_misc.mtl", },
+						mesh = "ks_signale/schilder/ks_kreuz.msh",
+						transf = { 0.33000001311302, 0, 0, 0, 0, 0.23334524035454, -0.23334524035454, 0, -0, 0.23334524035454, 0.23334524035454, 0, -0.30000001192093, 0.0099999997764826, 5.3099999427795, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 300,
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1977,
+			yearTo = 0,
+		},
+		cost = {
+			price = 5000,
+			priceScale = 1,
+		},
+		description = {
+			name = _(""),
+		},
+	},
+	version = 1,
+}
+end

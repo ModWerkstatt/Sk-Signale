@@ -1,0 +1,48 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.52, 3, 10.019, },
+		bbMin = { -0.47, -3.3, -1.72, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 0.496, 1.177, 4.870, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.023, -1.177, 3.148, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/sk_signale/sk_signale_mast_neu.mtl", },
+						mesh = "railroad/sk_signale/zsa_oben_angewinkelt_59_lod0.msh",
+						name = "Kasten",
+						transf = { 100, 0, 0, 0, 0, -1.6292067812174e-05, -100, 0, 0, 100, -1.6292067812174e-05, 0, -0.31000000238419, 0, 6.5199999809265-1.2, 1, },
+					},
+				},	
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 300,
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1977,
+			yearTo = 0,
+		},
+		cost = {
+			price = 5000,
+		},
+		description = {
+			name = _(""),
+			--description = _("Hv69 Hauptsignal mit einer Höhe von 2,5m. Vsig ohne Zsa anbaubar."),
+		},
+	},
+	version = 1,
+}
+end

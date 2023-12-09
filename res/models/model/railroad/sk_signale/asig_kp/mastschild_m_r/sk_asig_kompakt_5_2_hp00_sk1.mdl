@@ -1,0 +1,322 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.80000001192093, 0, 7.5, },
+		bbMin = { -1.1000000238419, -4, -1, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 0.95000004768372, 2, 4.25, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.15000000596046, -2, 3.25, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, 0.15000000596046, 7.4000000953674, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, 0.15000000596046, 7.1999998092651, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, -0.15000000596046, 7.1999998092651, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, 0.10000000149012, 6.9749999046326, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, 0, 6.9749999046326, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, -0.10000000149012, 6.9749999046326, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, 0.20000000298023, 6.8000001907349, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, 0, 6.8000001907349, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schute_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, -0.20000000298023, 6.8000001907349, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.1500000953674, -1.3999999761581, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 100,
+		},
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/misc/ks_pzb_1000.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.2999999523163, 0.21999999880791, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/halter/ks_halter_box_fm.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.5, -0.60000002384186, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/kaesten/ks_box_gross.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.03999999910593, -2.5, 0, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_mastschild.mtl", },
+						mesh = "railroad/sk_signale/sk_mastschild_m_r_lod0.msh",
+						name = "sk_mastschild_klein_rot_outlined",
+						transf = { 100, 0, 0, 0, 0, -1.6292067812174e-05, -100, 0, 0, 100, -1.6292067812174e-05, 0, 1.85, -11.96, -0.65, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/masten/ks_flachmast_fuss.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.5, 0, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/masten/ks_sockel.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.5, 0, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/halter/ks_halter_schirm_am.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.36000001430511, -2.5, 5.0100002288818, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schirm_gross_lod0.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, -2.5, 5.7249999046326, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/koerbe/ks_korb_schirm.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.10999999940395, -2.5, 5.1999998092651, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_kompakt_signal_masten.mtl", },
+						mesh = "ks_signale/masten/ks_flachmast_5_2_m.msh",
+						transf = { -1, -8.7422776573476e-08, 0, 0, 8.7422776573476e-08, -1, 0, 0, 0, 0, 1, 0, 0, -2.5, 0, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.34999999403954, -0.20000000298023, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 150,
+		},
+		{
+			node = {
+				children = {
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, 0.15000000596046, 7.4000000953674, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, 0.15000000596046, 7.1999998092651, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, -0.15000000596046, 7.1999998092651, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, 0.10000000149012, 6.9749999046326, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, 0, 6.9749999046326, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, -0.10000000149012, 6.9749999046326, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, 0.20000000298023, 6.8000001907349, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, 0, 6.8000001907349, 1, },
+					},
+					{
+						materials = { "ks_signale/optiken/ks_optik_off.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_kl.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.46000000834465, -0.20000000298023, 6.8000001907349, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.1500000953674, -1.3999999761581, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 200,
+		},
+		{
+			node = {
+				children = {
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_green_long_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_green_short_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "ks_signale/optiken/ks_optik_green.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.38999998569489, 0.15000000596046, 7.4000000953674, 1, },
+					},
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "ks_signale/optiken/ks_optik_red.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.38999998569489, 0.15000000596046, 7.1999998092651, 1, },
+					},
+					{
+						animations = {
+							green = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_back_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+							red = {
+								params = {
+									id = "kaleut_ks_signale_1/switch_forward_hv_red_optik.ani",
+								},
+								type = "FILE_REF",
+							},
+						},
+						materials = { "ks_signale/optiken/ks_optik_red.mtl", },
+						mesh = "ks_signale/optiken/ks_optik_gr.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.38999998569489, -0.15000000596046, 7.1999998092651, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.1500000953674, -1.3999999761581, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 200,
+		},
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/sk_signale/sk_signale_misc.mtl", },
+						mesh = "ks_signale/schirme/ks_schirm_gross_lod0.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.44999998807907, -2.5, 5.7249999046326, 1, },
+					},
+					{
+						materials = { "railroad/sk_signale/sk_kompakt_signal_masten.mtl", },
+						mesh = "ks_signale/masten/ks_flachmast_5_2_m.msh",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.5, 0, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.34999999403954, -0.20000000298023, 1, },
+			},
+			static = false,
+			visibleFrom = 150,
+			visibleTo = 300,
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1977,		-- 1984,
+			yearTo = 1980,		-- 0,
+		},
+		category = {
+			categories = { "Sk_asig_kp_mastschild_klein", },
+		},
+		cost = {
+			price = 4000,
+			priceScale = 1,
+		},
+		description = {
+			description = _("Sk-Signal: ") .. _("strB_asig_kp") .. _(" - kann Hp00 und ") .. _("str_sk1") .. _("str_zs3_x") .. _("str_zs6_x") .. _(" zeigen.") .. _(" strB_mschild_m_r") .. _("strB_rechts"),
+			name = _("Sk-Signal: ") .. _("str_asig_kp") .. _(", Hp00/") .. _("str_sk1") .. _("str_zs3_x") .. _("str_zs6_x") .. _("str_rechts"),
+		},
+		SkSignale = {
+			mg = false,
+			mk = true,
+			mo = false,
+			vsig69 = false,
+			vsigrund = false,
+			hp69 = false,
+			hp59 = false,
+			hpkp = true,
+			special = false,
+			Kl = false,
+			Sh1 = false,
+			Zs1 = false,
+			zs3Zs3v = false,
+			Zs6 = false,
+			wied = false,
+			side = "right",
+			waypoint = false,
+		},
+		signal = {
+			soundevent = "",
+			type = "PATH_SIGNAL",
+			upright = true,
+		},
+	},
+	version = 1,
+}
+end
